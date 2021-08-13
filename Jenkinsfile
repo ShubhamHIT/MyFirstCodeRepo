@@ -27,6 +27,13 @@ pipeline {
                 sh 'docker --version'
             }
         }
+        stage('create docker image') {
+            steps {
+                sh '''docker image ls 
+                    docker image build .  -f Dockerfile -t kulbhushanmayer/devops:latest
+                    docker image ls'''
+                  }
+        }
         stage ('SAST'){
           parallel{
             stage ('sonar-scan'){
