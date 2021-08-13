@@ -1,7 +1,10 @@
 pipeline {
     agent {
-  label 'linux'
-}
+        label 'linux'
+        }
+    tools {
+        maven 'mvn_3.8.1'
+        }
 
     stages {
         
