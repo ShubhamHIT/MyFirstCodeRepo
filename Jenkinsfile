@@ -36,8 +36,7 @@ pipeline {
         }
         stage('push docker image at Dokcerhub') {
             steps {
-                sh '''docker login -u ${dockeruser} -p ${dockerpassword}
-                        docker push shubhamhit/devops:latest'''
+                sh 'docker push shubhamhit/devops:latest'
                   }
         }
         stage('create docker Container') {
