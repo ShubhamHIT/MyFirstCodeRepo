@@ -3,7 +3,7 @@ pipeline {
         label 'linux'
         }
     tools {
-        maven 'mvn_3.8.1'
+        maven 'maven_3.8.1'
         }
 
     stages {
