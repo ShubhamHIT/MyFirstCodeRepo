@@ -34,6 +34,14 @@ pipeline {
                     docker image ls'''
                   }
         }
+        stage('create docker Container') {
+            steps {
+                sh '''docker ps -a
+                    docker container run -d -p 8080:8080 --name c1 --hostname c1 shubhamhit/devops:latest
+                    docker ps -a'''
+                  }
+        }
+        
         stage ('SAST'){
           parallel{
             stage ('sonar-scan'){
