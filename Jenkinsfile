@@ -25,7 +25,7 @@ pipeline {
          }
         stage('Docker version?') {
             steps {
-                sh 'docker version'
+                sh 'docker --version'
             }
         }
         stage ('SAST'){
