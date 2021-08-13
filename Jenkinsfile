@@ -17,12 +17,12 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                   }
-        }
-        post {
-            always {
-                archive 'target/devops.war'
-                   }
-             }
+            post {
+                always {
+                     archive 'target/devops.war'
+                       }
+                 }
+         }
         stage('How are you?') {
             steps {
                 echo 'How are you?'
