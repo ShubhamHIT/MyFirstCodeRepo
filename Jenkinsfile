@@ -4,11 +4,8 @@ pipeline {
         }
     tools {
         maven 'maven_3.8.1'
+         dockerTool 'Docker'
         }
-    tools {
-        dockerTool 'Docker'
-       }
-
     stages {
         
         stage ('Checkout Java Code'){
@@ -26,9 +23,9 @@ pipeline {
                        }
                  }
          }
-        stage('How are you?') {
+        stage('Docker version?') {
             steps {
-                echo 'How are you?'
+                sh 'docker version'
             }
         }
         stage ('SAST'){
